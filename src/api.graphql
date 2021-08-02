@@ -1,0 +1,41 @@
+# import * from "./schema.graphql"
+
+query GetAgentAndAvatarSumarries($address: Address!) {
+    stateQuery {
+        agent(address: $address) {
+            address
+            avatarStates {
+                address
+                dailyRewardReceivedIndex
+                rankingMapAddress
+                name
+                exp
+                level
+                actionPoint
+                combinationSlotAddresses
+                itemMap {
+                    count
+                }
+                eventMap {
+                    count
+                }
+                monsterMap {
+                    count
+                }
+                stageMap {
+                    count
+                }
+                questList {
+                    completedQuestIds
+                }
+                mailBox {
+                    count
+                }
+            }
+            gold
+            monsterCollectionRound
+            monsterCollectionLevel
+            hasTradedItem
+        }
+    }
+}
